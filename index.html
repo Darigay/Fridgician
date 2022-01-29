@@ -1,30 +1,98 @@
 <!DOCTYPE html>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <!-- <link rel="stylesheet" href="style/debug.css"> -->
-
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fridgician</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
-  <body>
 
-    <!-- hero -->
- <section class="hero is-fullheight">
-  <div class="hero-body">
-    <p class="title">
-      Hero title
-    </p>
-    <p class="subtitle">
-      Hero subtitle
-    </p>
+<body>
+
+  <!-- Title Bar-->
+  <section class="section is-size-1 has-text-centered has-background-warning">
+
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-refrigerator"></i>
+      </span>
+      <figure class="image is-180x180">
+        <img src="./assets/images/Frigician-logos.jpeg">
+      </figure>
+      <span class="icon">
+        <i class="fas fa-utensils"></i>
+      </span>
+    </span>
+  </section>
+
+  <!--Section-->
+  <section class="section has-background-primary">
+    <div class="card">
+      <div class="card-image">
+      <figure class="image is-526x526">
+        <img src="./assets/images/img1.jpg">
+      </figure>
+    </div>
+    <div class="card-content is-overlay">
+      <span class="tag is-justify-content-end is-size-5"> "THE MOST INDISPENSABLE INGREDIENT OF ALL GOOD HOME COOKING: LOVE FOR THOSE YOU ARE COOKING FOR." - SOPHIA
+        LOREN  </span>
+    </div>
   </div>
-</section>
 
-<section>
-   <p>hello world</p> 
-</section>
+    <!--<div class="container"> 
+    <div class="columns">
+      <div class="column is-one-quarter is-size-3">
+        <div class="content is-italic is-justify-content-space-around">
+          <p> "THE MOST INDISPENSABLE INGREDIENT OF ALL GOOD HOME COOKING: LOVE FOR THOSE YOU ARE COOKING FOR." - SOPHIA
+            LOREN </p>
+        </div>
+      </div>
+      <div class="column is-three-quarters">
+        <figure class="image is-526x526">
+          <img src="./assets/images/img1.jpg">
+        </figure>
+      </div>
+    </div>
+    <!-- </div> -->
 
-  </body>
+  </section>
+  <section class="section has-background-info">
+    <div class="container">
+      <nav class="level">
+        <div class="level-items-center">
+          <div class="field has-addons">
+            <p class="controls">
+              <input class="input" type="text" placeholder="Enter your Ingredient">
+            </p>
+            <p>
+              <button class="search-btn"> Search </button>
+            </p>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+
+
+  </section>
+  <section class="section has-background-danger">
+    <h1 class="title">Section</h1>
+    <h2 class="subtitle">
+      A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading.
+    </h2>
+  </section>
+
+  <!--Footer-->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        "Fridgician-magic Begins"
+      </p>
+    </div>
+  </footer>
+
+
+</body>
+
 </html>
