@@ -4,93 +4,127 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fridgician</title>
-  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
 
 <body>
 
   <!-- Title Bar-->
-  <section class="section is-size-1 has-text-centered has-background-warning">
-
-    <span class="icon-text">
-      <span class="icon">
-        <i class="fas fa-refrigerator"></i>
-      </span>
-      <figure class="image is-180x180">
-        <img src="./assets/images/Frigician-logos.jpeg">
-      </figure>
-      <span class="icon">
-        <i class="fas fa-utensils"></i>
-      </span>
-    </span>
-  </section>
-
-  <!--Section-->
-  <section class="section has-background-primary">
+  <div class="wrapper">
     <div class="card">
       <div class="card-image">
-      <figure class="image is-526x526">
-        <img src="./assets/images/img1.jpg">
-      </figure>
-    </div>
-    <div class="card-content is-overlay">
-      <span class="tag is-justify-content-end is-size-5"> "THE MOST INDISPENSABLE INGREDIENT OF ALL GOOD HOME COOKING: LOVE FOR THOSE YOU ARE COOKING FOR." - SOPHIA
-        LOREN  </span>
-    </div>
-  </div>
-
-    <!--<div class="container"> 
-    <div class="columns">
-      <div class="column is-one-quarter is-size-3">
-        <div class="content is-italic is-justify-content-space-around">
-          <p> "THE MOST INDISPENSABLE INGREDIENT OF ALL GOOD HOME COOKING: LOVE FOR THOSE YOU ARE COOKING FOR." - SOPHIA
-            LOREN </p>
-        </div>
-      </div>
-      <div class="column is-three-quarters">
-        <figure class="image is-526x526">
-          <img src="./assets/images/img1.jpg">
+        <figure class="image is-1152x1152">
+          <img src="./assets/images/img1.jpg" alt="Placeholder image">
         </figure>
       </div>
+      <div class="card-img is-overlay is-size-5 is-">
+        <img class="bulma-center-mixin" height="250" width="250" src="./assets/images/Frigician-logos.jpeg">
+        <!-- <p> " THE MOST INDISPENSABLE INGREDIENT OF ALL GOOD HOME COOKING: LOVE FOR THOSE YOU ARE COOKING FOR." - SOPHIA
+          LOREN " </p> -->
+      </div>
     </div>
-    <!-- </div> -->
-
+  </div>
   </section>
-  <section class="section has-background-info">
+
+  <section class="search has-background-lightgrey">
     <div class="container">
-      <nav class="level">
-        <div class="level-items-center">
-          <div class="field has-addons">
-            <p class="controls">
-              <input class="input" type="text" placeholder="Enter your Ingredient">
+      <div class="meal-search is-size-3 has-color-yellow">
+        <blockquote>" THE MOST INDISPENSABLE INGREDIENT OF ALL GOOD HOME COOKING: LOVE FOR THOSE YOU ARE COOKING FOR."
+          <cite>-- Sophia Loren</cite>
+        </blockquote>
+        <br>
+
+        <div class="meal-search-items">
+          <div class="field is-grouped">
+            <p class="control is-expanded">
+              <input class="input is-medium is-danger is-focused" type="text" id="input"
+                placeholder="Enter your Ingredient">
             </p>
-            <p>
-              <button class="search-btn"> Search </button>
+            <p class="control">
+              <a class="button is-info is-size-5" id="search-btn"><i class="fa fa-search"></i></a>
             </p>
           </div>
 
+
+          <div class="meal-result">
+            <h2 class="title">Your Search Results:</h2>
+            <div id="meal">
+              <!-- Meal item list-->
+              <div class="meal-item">
+                <div class="meal-img">
+                  <img src="./assets/images/food.jpg" alt="food">
+                </div>
+                <div class="meal-name">
+                  <h3>Salmon</h3>
+                  <a href="#" class="button is-warning is-size-4" id="receipe-btn">Get Receipe</a>
+                </div>
+              </div>
+              <!-- End of meal item-->
+            </div>
+          </div>
+
+          <div class="meal-details">
+            <!--receipe close button-->
+            <button type="button" class="button is-size-4 has-background-info" id="recipe-close-btn"> <i class="fas fa-times"></i>
+            </button>
+
+            <!--Meal Receipe content-->
+            <div class="meal-details-content">
+              <h2 class="recipe-title">Meals Name</h2>
+              <h2 class="recipe-category"> category Name</h2>
+              <div class="recipe-instructions">
+                <h3>Instructions:</h3>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                  Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
+                   nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                   Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
+                    nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
+                     nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                     Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
+                      nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
+                       nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                       Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
+                        nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!</p>
+              </div>
+              <div class="recipe-meal-img">
+                <img src ="./assets/images/food.jpg" alt="">
+              </div>
+              <div class="recipe-link">
+                <a href="#" target="_blank">Watch Video</a>
+              </div>
+            </div>
+
+
+          </div>
         </div>
-      </nav>
-    </div>
-
-
+      </div>
   </section>
+
+
   <section class="section has-background-danger">
     <h1 class="title">Section</h1>
     <h2 class="subtitle">
-      A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading.
+      A simple container
     </h2>
   </section>
 
-  <!--Footer-->
+
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
         "Fridgician-magic Begins"
       </p>
     </div>
-  </footer>
+  </footer> -->
 
 
 </body>

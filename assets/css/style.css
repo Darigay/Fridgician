@@ -1,3 +1,100 @@
-.tag{
-    text-align:right
+
+*{
+    border: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
 }
+.bulma-center-mixin {
+
+  @include overlay(1.5rem);
+  
+  border-radius: 0.25em;
+  color: white;
+  opacity: 0.6;
+  padding: 1em;
+
+  }
+  
+  /*.card-img p {
+
+  position:absolute;
+  bottom:5%;
+  right:25px;
+  left:30%;
+  color:rgb(233, 132, 17);
+  font-weight:bolder;
+  }
+     */
+
+  .meal-search {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color:rgba(64, 109, 231, 0.384);
+    font-weight:bolder;
+    }
+
+    
+
+    #meal {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap:2.5rem;
+        padding-bottom: 4rem;
+        
+    }
+
+    .meal-item{
+        height:500px;
+        width:500px;
+        box-shadow: 0 4px 21px -12px rgba(0,0,0,0.79);
+        margin:2rem 0;
+        padding:2rem;
+    }
+
+
+
+    .meal-img img {
+        width:100%;
+        display:block;
+    }
+
+    .meal-name{
+        text-align:center;
+    }
+
+    .meal-name h3{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .meal-details{
+        position:fixed;
+        top: 50%;
+        left: 50%;
+        background: rgb(240, 219, 173);
+        color:black;
+        transform: translate(-50%,-50%);
+        border-radius: 1rem;
+        width:75%;
+        Height:75%;
+        overflow-y:scroll;
+        border: 2rem;
+        padding: 2rem;
+        display:none;
+        opacity:0.9;
+    }
+#recipe-close-btn{
+    position:absolute;
+    right:3rem;
+    top:3rem;
+    border-radius:50%;
+    
+}
+
+.meal-details-content{
+    justify-content:center;
+    align-items:center;
+
+}
+    
