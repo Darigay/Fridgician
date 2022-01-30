@@ -38,7 +38,17 @@ fetch("https://themealdb.p.rapidapi.com/randomselection.php", {
 });
 //var randomMeal = function(data.meals){
 	//for (let i = 0; i < choices.length; i++)
-	categoryelement.textcontent = data.meals.category
+
+	//class="card=image" img placeholder:
+	// =strMealThumb
+	// meal name where recipe name is: categoryelement.textcontent = data.meals.category
+	// =strmeal
+	// below recipe name
+	// =strArea:
+	// actual recipe (link)
+	// =strSource
+	// strYoutube:(to see it made link) watch a video on how to maake it
+
 
 //}
 //
