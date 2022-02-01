@@ -7,76 +7,101 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <!-- <link rel="stylesheet" href="styles/debug.css"> -->
 </head>
 
 <body>
+<header class="hero is-large">
+  
+  <!-- Hero Backgound Image -->
+  <img class="image is-fullwidth" src="./assets/images/img1_edited.jpg" alt="a picture of a kitchen">
+  
+  <!-- Overlays Logo, Description, & Searchbar -->
+  <div class="hero-body p-0 is-overlay">
 
-  <!-- Title Bar-->
-  <div class="wrapper">
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-1152x1152">
-          <img src="./assets/images/img1.jpg" alt="Placeholder image">
-        </figure>
-      </div>
-      <div class="card-img is-overlay is-size-5 is-">
-        <img class="bulma-center-mixin" height="250" width="250" src="./assets/images/Frigician-logos.jpeg">
-        <!-- <p> " THE MOST INDISPENSABLE INGREDIENT OF ALL GOOD HOME COOKING: LOVE FOR THOSE YOU ARE COOKING FOR." - SOPHIA
-          LOREN " </p> -->
+    <!-- Logo and Tagline -->
+    <nav class="navbar  p-2 my-1">
+      <img class="navbar-item" src="./assets/images/Frigician-logos_black.svg" alt="Frigician logo" style="min-height: 128px; max-height: 180px;">
+      <h1 class="is-size-2 has-text-weight-bold has-text-white is-align-self-center has-background-dark pl-4 pr-4">Magic from your fridge</h1>
+    </nav>
+
+    <!-- Website Description -->
+    <div class="columns is-centered mb-6">
+      <p class="column is-half is-size-4 has-text-white is-align-self-center has-background-dark has-text-centered pl-4 pr-4 ">
+        Frigician helps you turn what ever you have in your fridge into delicious meals. It's like magic. Start by searching any ingredients you have and we'll find you delicious recipies.
+      </p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="columns is-centered">
+      <div class="column is-two-thirds field is-grouped my-6">
+        <p class="control is-expanded">
+          <!-- Search Input -->
+          <input class="input is-rounded" id="input" type="text" placeholder="Type in ingredients to find recipes">
+        </p>
+        <p class="control">
+          <!-- Search Btn -->
+          <a class="button is-dark is-rounded " id="search-btn" >Search Recipes</a>
+        </p>
       </div>
     </div>
+
   </div>
-  </section>
 
-  <section class="search has-background-lightgrey">
-    <div class="container">
-      <div class="meal-search is-size-3 has-color-yellow">
-        <blockquote>" THE MOST INDISPENSABLE INGREDIENT OF ALL GOOD HOME COOKING: LOVE FOR THOSE YOU ARE COOKING FOR."
-          <cite>-- Sophia Loren</cite>
-        </blockquote>
-        <br>
+</header>
 
-        <div class="meal-search-items">
-          <div class="field is-grouped">
-            <p class="control is-expanded">
-              <input class="input is-medium is-danger is-focused" type="text" id="input"
-                placeholder="Enter your Ingredient">
-            </p>
-            <p class="control">
-              <a class="button is-info is-size-5" id="search-btn"><i class="fa fa-search"></i></a>
-            </p>
+<!-- Search Results -->
+<!--Divya Part Start-->
+
+<section class="search has-background-lightgrey">
+  <div class="container">
+    <!-- <div class="meal-search is-size-3 has-color-yellow">
+      <blockquote>" THE MOST INDISPENSABLE INGREDIENT OF ALL GOOD HOME COOKING: LOVE FOR THOSE YOU ARE COOKING FOR."
+        <cite>-- Sophia Loren</cite>
+      </blockquote>
+      <br>
+
+      <div class="meal-search-items">
+        <div class="field is-grouped">
+          <p class="control is-expanded">
+            <input class="input is-medium is-danger is-focused" type="text" id="input"
+              placeholder="Enter your Ingredient">
+          </p>
+          <p class="control">
+            <a class="button is-info is-size-5" id="search-btn"><i class="fa fa-search"></i></a>
+          </p>
+        </div> -->
+
+
+        <div class="meal-result">
+          <h2 class="title">Your Search Results:</h2>
+           <div id="meal">
+            
+            <!-- <h1 id="label"></h1>
+            <p id="recipe"></p>
+            <img id="image"></img> -->
+            
           </div>
+        </div>
 
+        <div class="meal-details is-hidden" id="detail-model">
+          <!--receipe close button-->
+          <button type="button" class="button is-size-4 has-background-info" id="recipe-close-btn"> <i class="fas fa-times"></i>
+          </button>
 
-          <div class="meal-result">
-            <h2 class="title">Your Search Results:</h2>
-            <div id="meal">
-              <!-- Meal item list-->
-              <div class="meal-item">
-                <div class="meal-img">
-                  <img src="./assets/images/food.jpg" alt="food">
-                </div>
-                <div class="meal-name">
-                  <h3>Salmon</h3>
-                  <a href="#" class="button is-warning is-size-4" id="receipe-btn">Get Receipe</a>
-                </div>
-              </div>
-              <!-- End of meal item-->
-            </div>
-          </div>
-
-          <div class="meal-details">
-            <!--receipe close button-->
-            <button type="button" class="button is-size-4 has-background-info" id="recipe-close-btn"> <i class="fas fa-times"></i>
-            </button>
-
-            <!--Meal Receipe content-->
-            <div class="meal-details-content">
-              <h2 class="recipe-title">Meals Name</h2>
-              <h2 class="recipe-category"> category Name</h2>
-              <div class="recipe-instructions">
-                <h3>Instructions:</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          <!--Meal Receipe content-->
+          <div class="meal-details-content" id="meal-details-content">
+            <h2 class="recipe-title" id="recipe-title">Meals Name</h2>
+            <h2 class="recipe-source" id="recipe-source"> category Name</h2>
+            <div class="recipe-instructions" id="recipe-instructions">
+              <h3>Instructions:</h3>
+              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
+                 nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                 Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
+                  nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                   Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
                    nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!
                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -87,46 +112,67 @@
                      nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!
                      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                      Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
-                      nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                      Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
-                       nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                       Dignissimos ipsam deleniti sapiente ab laboriosam ex nostrum voluptatibus quibusdam
-                        nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!</p>
-              </div>
-              <div class="recipe-meal-img">
-                <img src ="./assets/images/food.jpg" alt="">
-              </div>
-              <div class="recipe-link">
-                <a href="#" target="_blank">Watch Video</a>
-              </div>
+                      nemo maiores ut dolorem consequuntur soluta ipsum ullam adipisci, sit, autem quam!</p>
             </div>
-
-
+            <div class="recipe-meal-img" id="recipe-meal-img">
+              <img src ="./assets/images/food.jpg" alt="">
+            </div>
+            
           </div>
+
+
         </div>
       </div>
-  </section>
-
-
-  <section class="section has-background-danger">
-    <h1 class="title">Section</h1>
-    <h2 class="subtitle">
-      A simple container
-    </h2>
-  </section>
-
-
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        "Fridgician-magic Begins"
-      </p>
     </div>
-  </footer> -->
+</section>
+<!--Divya Part End-->
 
+<Section class="section  py-3">
+  <!-- Section Title -->
+  <h1 class="is-size-1 has-text-black is-flex is-justify-content-center is-align-content-flex-start">Most Popular Recipes</h1>
+  <!-- Card Container -->
+  <div class="columns is-multiline is-flex-wrap-wrap">
+    <!-- Card -->
+    <div class="card column is-3">
+      <div class="card-image">
+        <figure class="image is-1by1">
+          <!-- Card Img -->
+          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <!-- Recipe Name -->
+            <p class="title is-3">Recipe Name</p>
+            <p class="subtitle is-6">?idk but something here?</p>
+          </div>
+        </div>
+        <!-- Recipe Description -->
+        <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+          <a href="#">#css</a> <a href="#">#responsive</a>
+          <br>
+          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column"></div>
+</Section>
 
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      "Fridgician-magic Begins"
+    </p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script src="./assets/js/script.js"></script>
 </body>
 
 </html>
