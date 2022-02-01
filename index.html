@@ -19,28 +19,40 @@
   <div class="hero-body p-0 is-overlay">
 
     <!-- Logo and Tagline -->
-    <nav class="navbar  p-2 my-1">
-      <img class="navbar-item" src="./assets/images/Frigician-logos_black.svg" alt="Frigician logo" style="min-height: 128px; max-height: 180px;">
-      <h1 class="is-size-2 has-text-weight-bold has-text-white is-align-self-center has-background-dark pl-4 pr-4">Magic from your fridge</h1>
+    <nav class=" ">
+      <!-- Descktop Logo and Tagline -->
+      <div class="columns is-centered level ">
+        <img class="column is-narrow level-item is-hidden-touch " src="./assets/images/Frigician-logos_black.svg" alt="Frigician logo" style="min-height: 60px; max-height: 180px;">
+        <h1 class="column is-narrow  level-item  is-size-2 is-hidden-touch has-text-weight-bold has-text-white is-align-self-center has-background-dark px-4">Magic from your fridge</h1>
+      </div>
+      <div class="columns is-centered ">
+        <img class="column is-narrow is-centered image is-128x128 is-hidden-desktop is-hidden-mobile mx-auto" src="./assets/images/Frigician-logos_black.svg" alt="Frigician logo" >
+      </div>
+      <div class="columns is-centered">
+        <img class="column is-narrow is-centered mx-auto" src="./assets/images/Frigician-logos_black-removebg-preview (1).png" alt="" style="max-height: 100px;">
+      </div>
     </nav>
 
     <!-- Website Description -->
-    <div class="columns is-centered mb-6">
-      <p class="column is-half is-size-4 has-text-white is-align-self-center has-background-dark has-text-centered pl-4 pr-4 ">
-        Frigician helps you turn what ever you have in your fridge into delicious meals. It's like magic. Start by searching any ingredients you have and we'll find you delicious recipies.
+    <div class="columns is-centered m-0">
+      <p class="column is-half is-hidden-touch is-hidden-desktop-only is-size-4 has-text-white is-align-self-center has-background-dark has-text-centered px-2 mb-6 ">
+        Frigician helps you turn what's in your fridge into delicious meals. Start by searching any ingredients you have and we'll find you delicious recipies.
       </p>
+      <h1 class="column is-narrow is-size-5 is-hidden-desktop is-hidden-mobile has-text-weight-bold has-text-white is-align-self-center has-background-dark px-4 mb-3">
+        Turning what's in your fridge into delicious meals!
+      </h1>
     </div>
 
     <!-- Search Bar -->
     <div class="columns is-centered">
-      <div class="column is-two-thirds field is-grouped my-6">
+      <div class="column is-two-thirds field is-grouped my-auto">
         <p class="control is-expanded">
           <!-- Search Input -->
           <input class="input is-rounded" type="text" placeholder="Type in ingredients to find recipes">
         </p>
         <p class="control">
           <!-- Search Btn -->
-          <a class="button is-dark is-rounded ">Search Recipes</a>
+          <button class="button is-dark is-rounded ">Search Recipes</button>
         </p>
       </div>
     </div>
@@ -48,7 +60,7 @@
   </div>
 
 </header>
-
+<!-- Recipes populate here -->
 <Section class="section  py-3">
   <!-- Section Title -->
   <h1 class="is-size-1 has-text-black is-flex is-justify-content-center is-align-content-flex-start">Most Popular Recipes</h1>
@@ -66,7 +78,7 @@
         <div class="media">
           <div class="media-content">
             <!-- Recipe Name -->
-            <p class="title is-3">Recipe Name</p>
+            <h4 class="title is-3">Recipe Name</h4>
             <p class="subtitle is-6">?idk but something here?</p>
           </div>
         </div>
@@ -74,9 +86,8 @@
         <div class="content">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-          <a href="#">#css</a> <a href="#">#responsive</a>
           <br>
-          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+          <button class="button is-dark is-rounded">View Recipe</button>
         </div>
       </div>
     </div>
@@ -87,7 +98,7 @@
 <footer class="footer">
   <div class="content has-text-centered">
     <p>
-      "Fridgician-magic Begins"
+      "THE MOST INDISPENSABLE INGREDIENT OF ALL GOOD HOME COOKING: LOVE FOR THOSE YOU ARE COOKING FOR." - SOPHIA LOREN
     </p>
   </div>
 </footer>
