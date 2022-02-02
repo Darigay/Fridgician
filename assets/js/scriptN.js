@@ -38,7 +38,7 @@ const settings = {
 		var strTags = document.createElement("a");
   
 		//Setting the text of the h3 element and p element.
-		strMealThumb.imageContent = data.meals[i].strMealThumb;
+		strMealThumb.textContent = data.meals[i].strMealThumb;
 		strMeal.textContent = data.meals[i].strMeal;
 		strCategory.textContent = data.meals[i].strCategory;
 		strSource.textContent = data.meals[i].strSource;
