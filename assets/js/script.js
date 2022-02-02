@@ -12,10 +12,6 @@ const recipeInstructionsEl = document.getElementById("recipe-instructions");
 const recipeImgEl = document.getElementById("recipe-meal-img");
 
 
-
-
-
-
 // Event listener
 searchBtn.addEventListener('click', getMealList);
 
@@ -34,10 +30,12 @@ function getMealList() {
 
     .then(data => {
       console.log(data);
+      mealList.innerHTML = "";
 
       for (var i = 0; i < data.hits.length; i++) {
 
         const divEl = document.createElement("div");
+        //divEl.className = "meal"+ i ;
         divEl.style.border = "2px solid red";
         divEl.style.padding = "20px";
 
@@ -49,38 +47,33 @@ function getMealList() {
         const recipeEl = document.createElement("a");
         recipeEl.innerHTML = data.hits[i].recipe.url;
         divEl.append(recipeEl);
+        recipeEl.setAttribute("data-id",i)
+        
 
+        
         recipeEl.addEventListener("click", function () {
 
           console.log("i am sure this button works");
-          console.log(i);
+        //  console.log(i);
+          
+           detailModelEl.classList.remove("is-hidden");
+           var id = recipeEl.getAttribute("data-id");
 
-          detailModelEl.classList.remove("is-hidden");
-
-
-          recipeTitleEl.textContent = data.hits[i].recipe.label;
-
-          recipeSourceEl.textContent = data.hits[i].recipe.source;
-          recipeInstructionsEl.textContent = data.hits[i].recipe.uri;
-          //recipeImgEl.textContent =  data.hits[].recipe.image;
-
-
-        }
-
-        )
-
+          recipeTitleEl.textContent = data.hits[id].recipe.label;
+          recipeSourceEl.textContent = data.hits[id].recipe.source;
+          recipeInstructionsEl.textContent = data.hits[id].recipe.uri;
+          recipeImgEl.textContent =  data.hits[id].recipe.image; 
+ 
+          }  )
 
         var imgEl = document.createElement("img");
         imgEl.setAttribute("src", data.hits[i].recipe.image)
         divEl.append(imgEl);
-
         mealList.appendChild(divEl);
-
-
-
-
-
+       
       }
+      
+      console.log(mealList);
     })
 
 
@@ -95,7 +88,12 @@ function getMealList() {
 
 }
 
-       //  mealList.innerHTML = html;
 
 
+//  mealList.innerHTML = html;
 
+      /*  document.getElementById("url").click = function () {
+        location.href = "www.google.com";
+
+       };
+ */
