@@ -28,20 +28,28 @@ const settings = {
 	  console.log(cardsContainerEl);
 	  for (var i = 0; i < data.meals.length; i++) {
 		  console.log("test");
-		var divEl = document.createElement("div");
-		  divEl.setAttribute('class',"card-columns is-3")
-		//need right tags
-		var strMealThumb = data.meals[i].strMealThumb ;
-		var strMeal = data.meals[i].strMeal;
-		var strCategory = data.meals[i].strCategory;
-		var strSource = data.meals[i].strSource;
-		var strTags = data.meals[i].strTags;
-  
-
-    cardsContainerEl.innerHTML = "<div class='card-image'><figure class='image is-1by1'><img src="strMealThumb" alt='image of " + strMeal +"'></figure></div>";
-    divEl.appendChild(divEl);
-    divEl.innerHTML = "<div class='card-content'><div class='media'><div class='media-content'><p class='title is-3'>"strMeal"</p><p class='subtitle is-6'>"strCategory"</p></div></div>";
+		var cardCont = document.createElement("div");
+		  cardCont.setAttribute('class',"card-columns is-3")
     
-		cardsContainerEl.append(divEl);
+      
+      //need right tags
+      var strMealThumb = data.meals[i].strMealThumb ;
+      var strMeal = data.meals[i].strMeal;
+      var strCategory = data.meals[i].strCategory;
+      var strSource = data.meals[i].strSource;
+      
+      console.log (strMeal, strMealThumb, strCategory, strSource)
+
+      var cardImg = document.createElement("div");
+        cardImg.setAttribute ("class", "card-image");
+        cardImg.innerHTML = "<figure class='image is-1by1'><img src="+strMealThumb+" alt='image of " + strMeal +"'></figure>";
+        cardImg.appendChild(cardCont);
+        console.log (strMealThumb)
+
+
+    //divEl.innerHTML = "<div class='card-content'><div class='media'><div class='media-content'><p class='title is-3'>" + strMeal + "</p><p class='subtitle is-6'>" + strCategory + "</p></div></div><div class='content'><a>@bulmaio</a>.<a href='#''>#css</a> <a href='#''>#responsive</a><br><time datetime='2016-1-1'>11:09 PM - 1 Jan 2016</time></div></div>";
+    
+    
+		//cardsContainerEl.appendChild(divEl);
   }
 	});
