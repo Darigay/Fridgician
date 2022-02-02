@@ -64,7 +64,7 @@ const settings = {
         var recipeName = document.createElement("div")
           recipeName.setAttribute ("class", "media-content");
           recipeName.innerHTML = "<h4 class='title is-3'>"+strMeal+"</h4><p class='subtitle is-6'>'Catagory: "+strCategory+"'</p>";
-          recipeName.appendChild(cardContent);
+          recipeName.appendChild(cgit merardContent);
     
     
 		cardsContainerEl.append(cardContainer);
