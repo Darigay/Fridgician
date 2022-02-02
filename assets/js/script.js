@@ -1,4 +1,4 @@
-const searchBtn = document.getElementById("search-btn");
+const searchBtn = document.getElementById("searchForm");
 const mealList = document.getElementById("meal");
 
 
@@ -13,10 +13,11 @@ const recipeImgEl = document.getElementById("recipe-meal-img");
 
 
 // Event listener
-searchBtn.addEventListener('click', getMealList);
+searchBtn.addEventListener('submit', getMealList);
 
 //function getMealList - to get matching recipes with ingredients
-function getMealList() {
+function getMealList(event) {
+  event.preventDefault();
   let searchInputText = document.getElementById("input").value.trim();
   fetch("https://edamam-recipe-search.p.rapidapi.com/search?q=" + searchInputText, {
     "method": "GET",
@@ -87,7 +88,6 @@ function getMealList() {
      });       */
 
 }
-
 
 
 //  mealList.innerHTML = html;
