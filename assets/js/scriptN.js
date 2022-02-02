@@ -31,25 +31,17 @@ const settings = {
 		var divEl = document.createElement("div");
 		  divEl.setAttribute('class',"card-columns is-3")
 		//need right tags
-		var strMealThumb = document.createElement("img");
-		var strMeal = document.createElement("p");
-		var strCategory = document.createElement("p");
-		var strSource = document.createElement("div");
-		var strTags = document.createElement("a");
+		var strMealThumb = data.meals[i].strMealThumb ;
+		var strMeal = data.meals[i].strMeal;
+		var strCategory = data.meals[i].strCategory;
+		var strSource = data.meals[i].strSource;
+		var strTags = data.meals[i].strTags;
   
-		//Setting the text of the h3 element and p element.
-		strMealThumb.imageContent = data.meals[i].strMealThumb;
-		strMeal.textContent = data.meals[i].strMeal;
-		strCategory.textContent = data.meals[i].strCategory;
-		strSource.textContent = data.meals[i].strSource;
-		strTags.textContent = data.meals[i].strTags;
-  
-		divEl.append(strMealThumb);
-		divEl.append(strMeal);
-		divEl.append(strCategory);
-		divEl.append(strSource);
-		divEl.append(strTags);
-  
+
+    cardsContainerEl.innerHTML = "<div class='card-image'><figure class='image is-1by1'><img src="strMealThumb" alt='image of " + strMeal +"'></figure></div>";
+    divEl.appendChild(divEl);
+    divEl.innerHTML = "<div class='card-content'><div class='media'><div class='media-content'><p class='title is-3'>"strMeal"</p><p class='subtitle is-6'>"strCategory"</p></div></div>";
+    
 		cardsContainerEl.append(divEl);
-	  }
+  }
 	});
