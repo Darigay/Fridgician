@@ -29,7 +29,7 @@ const settings = {
 	  for (var i = 0; i < data.meals.length; i++) {
 		  console.log("test");
 		var divEl = document.createElement("div");
-		  divEl.setAttribute('class',"card column is-3")
+		  divEl.setAttribute('class',"card-columns is-3")
 		//need right tags
 		var strMealThumb = document.createElement("img");
 		var strMeal = document.createElement("p");
