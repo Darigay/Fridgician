@@ -1,4 +1,4 @@
-const searchBtn = document.getElementById("search-btn");
+const searchBtn = document.getElementById("searchForm");
 const mealList = document.getElementById("meal");
 
 
@@ -22,7 +22,7 @@ var recipeimgEl = document.createElement("img");
 
 
 // Event listener
-searchBtn.addEventListener('click', getMealList);
+searchBtn.addEventListener('submit', getMealList);
 
 recipeCloseBtn.addEventListener("click", function () {
   detailModelEl.classList.add("is-hidden");
@@ -31,7 +31,8 @@ recipeCloseBtn.addEventListener("click", function () {
 
 
 //function getMealList - to get matching recipes with ingredients
-function getMealList() {
+function getMealList(event) {
+  event.preventDefault();
   let searchInputText = document.getElementById("input").value.trim();
 
   // if(!searchInputText.ok){
