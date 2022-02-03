@@ -34,12 +34,13 @@ recipeCloseBtn.addEventListener("click", function () {
 function getMealList() {
   let searchInputText = document.getElementById("input").value.trim();
 
-  // if(!searchInputText.ok){
-  //   window.alert('Enter an Ingredient,Try Again!');
-  // }
+  if (!searchInputText) {
+    window.alert('Enter an Ingredient,Try Again!');
+  }
+ 
 
 
-  fetch("https://edamam-recipe-search.p.rapidapi.com/search?q=" + searchInputText, {
+    fetch("https://edamam-recipe-search.p.rapidapi.com/search?q=" + searchInputText, {
     "method": "GET",
     "headers": {
       "x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com",
@@ -48,88 +49,88 @@ function getMealList() {
   })
 
     .then(response => response.json())
-    
-    .then(data => {
-      console.log(data);
-      mealList.innerHTML = "";
 
-      for (var i = 0; i < data.hits.length; i++) {
+      .then(data => {
+        console.log(data);
+        mealList.innerHTML = "";
 
-        const divEl = document.createElement("div");
-        //divEl.className = "meal"+ i ;
-        divEl.style.border = "2px solid red";
-        divEl.style.padding = "20px";
+        for (var i = 0; i < data.hits.length; i++) {
 
-        // mealList[i].innerHTML="";
-        const headEl = document.createElement("p");
-        headEl.innerHTML = data.hits[i].recipe.label;
-        divEl.append(headEl);
+          const divEl = document.createElement("div");
+          //divEl.className = "meal"+ i ;
+          divEl.style.border = "2px solid red";
+          divEl.style.padding = "20px";
 
-        const recipeEl = document.createElement("a");
-        recipeEl.innerHTML = data.hits[i].recipe.url;
-        divEl.append(recipeEl);
-        recipeEl.setAttribute("data-id", i)
+          // mealList[i].innerHTML="";
+          const headEl = document.createElement("p");
+          headEl.innerHTML = data.hits[i].recipe.label;
+          divEl.append(headEl);
 
-
-
-        recipeEl.addEventListener("click", function () {
-
-          console.log("i am sure this button works");
-          //  console.log(i);
-
-          detailModelEl.classList.remove("is-hidden");
-          var id = recipeEl.getAttribute("data-id");
-
-          recipeTitleEl.textContent = "Meal Name: " + data.hits[id].recipe.label;
-          recipeSourceEl.textContent = "Source of the Recipe : " + data.hits[id].recipe.source;
-          recipeInstructionsEl.textContent = "Ingredients: " + data.hits[id].recipe.ingredientLines;
-          recipeCuisineEl.textContent = "Cuisine: " + data.hits[id].recipe.cuisineType;
-          recipeMealTypeEl.textContent = "Meal Type : " + data.hits[id].recipe.mealType;
-          recipeDishTypeEl.textContent = "Dish Type: " + data.hits[id].recipe.dishType;
-          recipeCaloriesEl.textContent = "Calories: " + data.hits[id].recipe.calories;
+          const recipeEl = document.createElement("a");
+          recipeEl.innerHTML = data.hits[i].recipe.url;
+          divEl.append(recipeEl);
+          recipeEl.setAttribute("data-id", i)
 
 
 
-          recipeimgEl.setAttribute("src", data.hits[id].recipe.image);
-          detailModelEl.append(recipeimgEl);
+          recipeEl.addEventListener("click", function () {
 
-          recipeUrlEl.textContent = "Recipe Link : " + data.hits[id].recipe.url;
+            console.log("i am sure this button works");
+            //  console.log(i);
 
-          // opens a window to display the complete recipe website
+            detailModelEl.classList.remove("is-hidden");
+            var id = recipeEl.getAttribute("data-id");
 
-          recipeUrlEl.addEventListener("click", function () {
-            window.open(data.hits[id].recipe.url);
+            recipeTitleEl.textContent = "Meal Name: " + data.hits[id].recipe.label;
+            recipeSourceEl.textContent = "Source of the Recipe : " + data.hits[id].recipe.source;
+            recipeInstructionsEl.textContent = "Ingredients: " + data.hits[id].recipe.ingredientLines;
+            recipeCuisineEl.textContent = "Cuisine: " + data.hits[id].recipe.cuisineType;
+            recipeMealTypeEl.textContent = "Meal Type : " + data.hits[id].recipe.mealType;
+            recipeDishTypeEl.textContent = "Dish Type: " + data.hits[id].recipe.dishType;
+            recipeCaloriesEl.textContent = "Calories: " + data.hits[id].recipe.calories;
+
+
+
+            recipeimgEl.setAttribute("src", data.hits[id].recipe.image);
+            detailModelEl.append(recipeimgEl);
+
+            recipeUrlEl.textContent = "Recipe Link : " + data.hits[id].recipe.url;
+
+            // opens a window to display the complete recipe website
+
+            recipeUrlEl.addEventListener("click", function () {
+              window.open(data.hits[id].recipe.url);
+
+            })
+
 
           })
 
+          var imgEl = document.createElement("img");
+          imgEl.setAttribute("src", data.hits[i].recipe.image)
+          divEl.append(imgEl);
+          mealList.appendChild(divEl);
 
-        })
-
-        var imgEl = document.createElement("img");
-        imgEl.setAttribute("src", data.hits[i].recipe.image)
-        divEl.append(imgEl);
-        mealList.appendChild(divEl);
-
-      }
+        }
 
 
-      console.log(mealList);
-    })
+        console.log(mealList);
+      })
 
 
-  .catch(err => {
-    console.log("catch");
+      .catch(err => {
+        console.log("catch");
+
+        console.error('Error', err);
+        window.alert('Something Went Wrong, Try Again!');
+
+      });
+
+}
+recipeCloseBtn.addEventListener("click", function () {
+  detailModelEl.classList.add("is-hidden");
+  detailModelEl.removeChild(recipeimgEl);
+
+
+})
   
-    console.error('Error', err);
-   window.alert('Something Went Wrong, Try Again!');
-
-  });
-
-  
-  recipeCloseBtn.addEventListener("click", function () {
-    detailModelEl.classList.add("is-hidden");
-    detailModelEl.removeChild(recipeimgEl);
-
-
-  })
-  }
