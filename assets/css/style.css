@@ -98,3 +98,18 @@
 
 }
     
+.meal-details
+{
+    justify-content:center;
+    align-items: :center;
+    font-size: 25px;
+    line-height: 2rem; 
+    color:red;
+    font-weight:bold;
+
+}
+
+.recipe-meal-img{
+    
+}
+

@@ -59,8 +59,9 @@ function getMealList(event) {
 
           const divEl = document.createElement("div");
           //divEl.className = "meal"+ i ;
-          divEl.style.border = "2px solid red";
+          divEl.style.border = "5px solid black";
           divEl.style.padding = "20px";
+          divEl.style.backgroundColor = "beige"
 
           // mealList[i].innerHTML="";
           const headEl = document.createElement("p");
