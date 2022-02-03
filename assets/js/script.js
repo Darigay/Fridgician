@@ -73,7 +73,7 @@ function getMealList(event) {
 
 
 
-        recipeEl.addEventListener("click", function () {
+        recipeEl.addEventListener("submit", function () {
 
           console.log("i am sure this button works");
           //  console.log(i);
