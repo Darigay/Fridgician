@@ -52,3 +52,9 @@ Presentation Zen (Links to an external site.) is the website of Garr Reynolds, a
 Toastmasters International (Links to an external site.) is a nonprofit educational organization that teaches public speaking and leadership skills through a worldwide network of clubs.
 
 TED Talks (Links to an external site.) is a nonprofit devoted to spreading ideas, usually in the form of short, powerful talks (18 minutes or less). Watching some of the most effective speakers in the world can give you an idea of how you should present.
+
+Link to deployed page
+https://darigay.github.io/Fridgician/
+
+Link to deployed repo
+https://github.com/Darigay/Fridgician.git
