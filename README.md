@@ -38,6 +38,13 @@ Recipe will give user a flexibility to search recipes with ingredients of choice
 
 ## ScreenShot of website
 
+![Fridgician1](https://user-images.githubusercontent.com/94805706/152695861-3410534c-1141-4169-ab41-3d2db9283abe.jpeg)
+
+![Fridgician2](https://user-images.githubusercontent.com/94805706/152695867-9768781b-117d-4c69-9d97-96252e129112.jpeg)
+
+![Fridgician3](https://user-images.githubusercontent.com/94805706/152695874-f7aaee49-4212-4872-9909-01ee42e39d3e.jpeg)
+
+![Fridgician4](https://user-images.githubusercontent.com/94805706/152695878-dda1a829-764a-4a38-97a7-e44cecaf8742.jpeg)
 
 
 ## Resources
