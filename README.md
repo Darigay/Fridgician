@@ -59,7 +59,7 @@ Recipe will give user a flexibility to search recipes with ingredients of choice
 - Deployed Page - https://darigay.github.io/Fridgician/
 
 ## contact
-You can contact us at divya.arigay@gmail.com , ernypoo92@gmail.com 
+You can contact us at divya.arigay@gmail.com , ernypoo92@gmail.com , nickcjohnson84@outlook.com
 
 ## contributors
 Starter code by U OF U Bootcamp and trilogy Education Services.
