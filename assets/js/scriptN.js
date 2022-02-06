@@ -71,7 +71,7 @@ const settings = {
       //Tags and Button
       var recipeButton = document.createElement("div");
       recipeButton.setAttribute ("class", "content");
-      recipeButton.innerHTML = "Recipe Tags <a>"+strTags+"</a>.<br><button class='button is-dark is-rounded'>View Recipe</button>";
+      recipeButton.innerHTML = "Recipe Tags <a>"+strTags+"</a>.<br><a target='_blank' rel='noopener noreferrer' href="+strSource+" class='button is-dark is-rounded'>View Recipe</a>";
       cardContainer.appendChild(recipeButton);
       
     }
