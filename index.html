@@ -86,9 +86,14 @@
 
 
         <div class="meal-result">
-          <h2 class="is-size-1 has-text-black is-flex is-justify-content-center is-align-content-flex-start mb-3 ">Your Search Results:</h2>
-           <div id="meal">
-            
+          <h2 class="title is-size-1 has-text-black is-flex is-justify-content-center is-align-content-flex-start mb-3 is-hidden-touch">Your Search Results:</h2>
+           <div class="columns card-columns is-multiline is-flex-wrap-wrap" id="meal">
+             <!-- <div class = "display" id ="display">
+                <h1 class="head" id="head"></h1>
+                <a href="#" class="recipe" id="recipe"></a>
+                <img src="" alt="" class="image" id="image"></img>
+             </div>
+             -->
             <!-- <h1 id="label"></h1>
             <p id="recipe"></p>
             <img id="image"></img> -->
@@ -102,21 +107,21 @@
           </button>
 
           <!--Meal Receipe content-->
-          <div class="meal-details-content" id="meal-details-content">
-            <h2 class="recipe-title" id="recipe-title"></h2>
-            <h3 class="recipe-cuisine" id="recipe-cuisine"> </h3>
-            <h2 class="recipe-mealtype" id="recipe-mealtype"> </h2>
-            <h2 class="recipe-dishtype" id="recipe-dishtype"></h2>
-            <h2 class="recipe-source" id="recipe-source"> </h2>
-            <h2 class="recipe-calories" id="recipe-calories"> </h2>
+          <div class="meal-details-content is-centered" id="meal-details-content">
+            <h2 class="recipe-title is-centered" id="recipe-title"></h2>
+            <h3 class="recipe-cuisine is-centered" id="recipe-cuisine"> </h3>
+            <h2 class="recipe-mealtype is-centered" id="recipe-mealtype"> </h2>
+            <h2 class="recipe-dishtype is-centered" id="recipe-dishtype"></h2>
+            <h2 class="recipe-source is-centered" id="recipe-source"> </h2>
+            <h2 class="recipe-calories is-centered" id="recipe-calories"> </h2>
 
-            <div class="recipe-instructions" id="recipe-instructions"></div>
+            <div class="recipe-instructions is-centered" id="recipe-instructions"></div>
               
             
-            <div class="recipe-meal-img" id="recipe-meal-img">
+            <div class="recipe-meal-img  is-512x512" id="recipe-meal-img">
               <!-- <img src ="./assets/images/food.jpg" alt=""> -->
             </div>
-            <a href="#" class="recipe-url" id="recipe-url"></a>
+            <a href="#" class="recipe-url is-centered" id="recipe-url"></a>
             
           </div>
 
