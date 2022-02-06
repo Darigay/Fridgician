@@ -32,7 +32,7 @@ const settings = {
 		  
 
 		var cardContainer = document.createElement("div");
-		  cardContainer.setAttribute('class',"card column is-3-desktop is-4-tablet is")
+		  cardContainer.setAttribute('class',"card column is-3-desktop is-4-tablet")
       cardsContainerEl.append(cardContainer);
       console.log (cardContainer)
     

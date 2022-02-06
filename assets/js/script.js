@@ -1,7 +1,6 @@
 const searchBtn = document.getElementById("searchForm");
 const mealList = document.getElementById("meal");
 
-
 const detailModelEl = document.getElementById("detail-model");
 const recipeCloseBtn = document.getElementById("recipe-close-btn");
 const mealDetailsContent = document.getElementById("meal-details-content");
@@ -35,9 +34,10 @@ function getMealList(event) {
   event.preventDefault();
   let searchInputText = document.getElementById("input").value.trim();
 
-  // if(!searchInputText.ok){
-  //   window.alert('Enter an Ingredient,Try Again!');
-  // }
+  if (!searchInputText) {
+    window.alert('Enter an Ingredient,Try Again!');
+  }
+
 
 
   fetch("https://edamam-recipe-search.p.rapidapi.com/search?q=" + searchInputText, {
@@ -49,37 +49,75 @@ function getMealList(event) {
   })
 
     .then(response => response.json())
-    
+
     .then(data => {
       console.log(data);
       mealList.innerHTML = "";
 
+      if (data.hits.length == 0) {
+        window.alert("Ingredient Not Found");
+        return;
+      }
+
+
       for (var i = 0; i < data.hits.length; i++) {
 
         const divEl = document.createElement("div");
-        //divEl.className = "meal"+ i ;
-        divEl.style.border = "2px solid red";
-        divEl.style.padding = "20px";
+        divEl.classList.add("card", "column", "is-3-desktop", "is-4-tablet");
+        
+        // divEl.className = "meal"+ i ;
+        // divEl.style.border = "5px solid black";
+        // divEl.style.padding = "20px";
+        // divEl.style.backgroundColor = "beige"
 
         // mealList[i].innerHTML="";
-        const headEl = document.createElement("p");
-        headEl.innerHTML = data.hits[i].recipe.label;
-        divEl.append(headEl);
 
-        const recipeEl = document.createElement("a");
-        recipeEl.innerHTML = data.hits[i].recipe.url;
-        divEl.append(recipeEl);
-        recipeEl.setAttribute("data-id", i)
+        const imgDiv = document.createElement("div");
+        imgDiv.classList.add("card-image", "is-hidden-mobile");
+
+        const imgFigure = document.createElement("figure");
+        imgFigure.classList.add("image", "is-1by1");
+        var imgEl = document.createElement("img");
+        imgEl.setAttribute("src", data.hits[i].recipe.image)
+
+        divEl.append(imgDiv);
+        imgDiv.append(imgFigure);
+        imgFigure.append(imgEl)
 
 
+        const conDiv = document.createElement("div");
+        conDiv.classList.add("content");
 
-        recipeEl.addEventListener("submit", function () {
+        const btnEl = document.createElement("button");
+        btnEl.classList.add("button", "is-dark", "is-rounded", "is-block");
+        btnEl.textContent = "View Recipe";
+        // btnEl.setAttribute("href", "#");
+        btnEl.setAttribute("data-id", i);
 
-          console.log("i am sure this button works");
+        conDiv.textContent = data.hits[i].recipe.label;
+        conDiv.append(btnEl);
+        divEl.append(conDiv);
+
+
+        //  const headEl = document.createElement("p");
+        //   headEl.innerHTML = data.hits[i].recipe.label;
+        //   divEl.append(headEl);
+
+        //  const recipeEl = document.createElement("a");
+        //   recipeEl.innerHTML = data.hits[i].recipe.url;
+        //   divEl.append(recipeEl);
+        //   recipeEl.setAttribute("data-id", i)
+
+        mealList.appendChild(divEl);
+
+
+        btnEl.addEventListener("click", function () {
+
+          // console.log("i am sure this button works");
           //  console.log(i);
 
           detailModelEl.classList.remove("is-hidden");
-          var id = recipeEl.getAttribute("data-id");
+          var id = btnEl.getAttribute("data-id");
 
           recipeTitleEl.textContent = "Meal Name: " + data.hits[id].recipe.label;
           recipeSourceEl.textContent = "Source of the Recipe : " + data.hits[id].recipe.source;
@@ -88,8 +126,6 @@ function getMealList(event) {
           recipeMealTypeEl.textContent = "Meal Type : " + data.hits[id].recipe.mealType;
           recipeDishTypeEl.textContent = "Dish Type: " + data.hits[id].recipe.dishType;
           recipeCaloriesEl.textContent = "Calories: " + data.hits[id].recipe.calories;
-
-
 
           recipeimgEl.setAttribute("src", data.hits[id].recipe.image);
           detailModelEl.append(recipeimgEl);
@@ -103,13 +139,7 @@ function getMealList(event) {
 
           })
 
-
         })
-
-        var imgEl = document.createElement("img");
-        imgEl.setAttribute("src", data.hits[i].recipe.image)
-        divEl.append(imgEl);
-        mealList.appendChild(divEl);
 
       }
 
@@ -118,19 +148,19 @@ function getMealList(event) {
     })
 
 
-  .catch(err => {
-    console.log("catch");
-  
-    console.error('Error', err);
-   window.alert('Something Went Wrong, Try Again!');
+    .catch(err => {
+      console.log("catch");
 
-  });
+      console.error('Error', err);
+      window.alert('Something Went Wrong, Try Again!');
 
-  
-  recipeCloseBtn.addEventListener("click", function () {
-    detailModelEl.classList.add("is-hidden");
-    detailModelEl.removeChild(recipeimgEl);
+    });
+
+}
+recipeCloseBtn.addEventListener("click", function () {
+  detailModelEl.classList.add("is-hidden");
+  detailModelEl.removeChild(recipeimgEl);
 
 
-  })
-  }
+})
+
