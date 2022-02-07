@@ -18,7 +18,7 @@ const settings = {
   })
 	.then(function (response) {
 	  if (response.ok) {
-		return response.json();
+		  return response.json();
 	  }
 	})
 	.then(function (data) {
@@ -26,15 +26,15 @@ const settings = {
 	  
 
 	  var cardsContainerEl = document.querySelector("#random-recipes");
-	  console.log(cardsContainerEl);
+	  
 
 	  for (var i = 0; i < data.meals.length; i++) {
 		  
 
 		var cardContainer = document.createElement("div");
-		  cardContainer.setAttribute('class',"card column is-3-desktop is-4-tablet is")
+		  cardContainer.setAttribute('class',"card column is-3-desktop is-4-tablet")
       cardsContainerEl.append(cardContainer);
-      console.log (cardContainer);
+      console.log (cardContainer)
     
       //need right tags
       var strMealThumb = data.meals[i].strMealThumb;
@@ -43,10 +43,6 @@ const settings = {
       var strSource = data.meals[i].strSource;
       var strTags = data.meals[i].strTags;
       
-      strMealThumb.toString();
-      
-
-      console.log (strMeal, strMealThumb, strCategory, strSource, strTags);
       // Card Big Image
       var cardImg = document.createElement("div");
         cardImg.setAttribute ("class", "card-image is-hidden-mobile");
@@ -56,20 +52,20 @@ const settings = {
 
       //Card Content
       var cardContent = document.createElement("div");
-        cardContent.setAttribute ("class", "media-left is-hidden-tablet");
+        cardContent.setAttribute ("class", "media-left ");
         cardContainer.appendChild(cardContent);
         
       
         //Recipe Small Image
         var cardSmallImg = document.createElement("div");
-          cardSmallImg.setAttribute ("class", "image is-96x96");
+          cardSmallImg.setAttribute ("class", "image is-96x96 is-hidden-tablet");
           cardSmallImg.innerHTML = "<figure class='image is-96x96'><img src="+strMealThumb+" alt='image of "+strMeal+"'></figure>";
           cardContent.appendChild(cardSmallImg);
 
         //Recipe Title and Category
         var recipeName = document.createElement("div");
           recipeName.setAttribute ("class", "media-content");
-          recipeName.innerHTML = "<h4 class='title is-3'>"+strMeal+"</h4><p class='subtitle is-6'>'Catagory: "+strCategory+"'</p>";
+          recipeName.innerHTML = "<h4 class='title is-3'>"+strMeal+"</h4><p class='subtitle is-6'>Catagory: "+strCategory+"</p>";
           cardContent.appendChild(recipeName);
       
       //Tags and Button
@@ -77,11 +73,8 @@ const settings = {
       recipeButton.setAttribute ("class", "content");
       recipeButton.innerHTML = "Recipe Tags <a>"+strTags+"</a>.<br><button class='button is-dark is-rounded'>View Recipe</button>";
       cardContainer.appendChild(recipeButton);
-    
-      
       
     }
-  
 	});
   
   
