@@ -84,19 +84,30 @@ function getMealList(event) {
         imgDiv.append(imgFigure);
         imgFigure.append(imgEl)
 
+        //Card Content
+      var cardContent = document.createElement("div");
+      cardContent.setAttribute ("class", "media-left ");
+      divEl.appendChild(cardContent);
+        
+        //Recipe Small Image
+        var cardSmallImg = document.createElement("div");
+          cardSmallImg.setAttribute ("class", "image is-96x96 is-hidden-tablet");
+          cardSmallImg.innerHTML = "<figure class='image is-96x96'><img src="+data.hits[i].recipe.image+" alt='image of "+data.hits[i].recipe.label+"'></figure>";
+          cardContent.appendChild(cardSmallImg); 
 
         const conDiv = document.createElement("div");
-        conDiv.classList.add("content");
+        conDiv.classList.add("media-content");
+        conDiv.innerHTML = "<h4 class='title is-3'>"+data.hits[i].recipe.label+"</h4>";
 
         const btnEl = document.createElement("button");
-        btnEl.classList.add("button", "is-dark", "is-rounded", "is-block");
+        btnEl.classList.add("button", "content", "is-dark", "is-rounded", "is-block");
         btnEl.textContent = "View Recipe";
         // btnEl.setAttribute("href", "#");
         btnEl.setAttribute("data-id", i);
 
-        conDiv.textContent = data.hits[i].recipe.label;
-        conDiv.append(btnEl);
-        divEl.append(conDiv);
+        //conDiv.textContent = data.hits[i].recipe.label;
+        cardContent.append(conDiv);
+        cardContent.append(btnEl);
 
 
         //  const headEl = document.createElement("p");
