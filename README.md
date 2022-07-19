@@ -62,7 +62,7 @@ Recipe will give user a flexibility to search recipes with ingredients of choice
 You can contact us at divya.arigay@gmail.com , ernypoo92@gmail.com , nickcjohnson84@outlook.com
 
 ## contributors
-Starter code by U OF U Bootcamp and trilogy Education Services.
+This was lovingly crafted by Aaron Jones, Divya Aringay, and Nick Jonhnson. 
 
 - - -
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
